@@ -1,0 +1,8 @@
+ALTER TABLE hook_events
+    ADD COLUMN IF NOT EXISTS cached_tokens BIGINT,
+    ADD COLUMN IF NOT EXISTS ttft_ms BIGINT,
+    ADD COLUMN IF NOT EXISTS copilot_usage_nano_aiu BIGINT;
+
+ALTER TABLE hook_sessions
+    ADD COLUMN IF NOT EXISTS cached_tokens BIGINT NOT NULL DEFAULT 0,
+    ADD COLUMN IF NOT EXISTS copilot_usage_nano_aiu BIGINT NOT NULL DEFAULT 0;

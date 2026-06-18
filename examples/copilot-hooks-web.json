@@ -1,0 +1,50 @@
+# Example user-level Copilot CLI hook configuration.
+# Copy to ~/.copilot/hooks/copilot-hooks-web.json and replace YOUR_TOKEN_HERE with a token
+# created from the web console (My Tokens page). One file per user; each user only sees
+# their own data when querying the web UI or the MCP server.
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE", "X-Source": "copilot-cli" },
+        "timeoutSec": 10 }
+    ],
+    "userPromptSubmitted": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "preToolUse": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "postToolUse": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "postToolUseFailure": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "agentStop": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "sessionEnd": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "errorOccurred": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "preCompact": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ],
+    "notification": [
+      { "type": "http", "url": "http://localhost:8080/api/hooks/ingest",
+        "headers": { "Authorization": "Bearer YOUR_TOKEN_HERE" }, "timeoutSec": 10 }
+    ]
+  }
+}

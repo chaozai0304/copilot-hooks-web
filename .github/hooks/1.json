@@ -1,0 +1,100 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PostToolBatch": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "MessageDisplay": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "Notification": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "StopFailure": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PreCompact": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "PostCompact": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "type": "command",
+          "command": "node /Users/chao/copilot-hooks-web/.github/hooks/send-hook.js --url http://localhost:8080/api/hooks/ingest --token 'chk_5be11a63f3220def5fd5f1677e737c69764d1c480fa0d35e6434d626019a7b8d' --source copilot-cli >/dev/null 2>&1 || true"
+      }
+    ]
+  }
+}

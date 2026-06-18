@@ -1,0 +1,82 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+
+spring:
+  application:
+    name: copilot-hooks-web
+  datasource:
+    url: ${DATABASE_JDBC_URL:jdbc:postgresql://172.17.189.159:5432/copilot_hooks?options=-c%20TimeZone%3DAsia%2FShanghai}
+    username: ${DATABASE_USERNAME:aiuser}
+    password: ${DATABASE_PASSWORD:1qa@WS3ed}
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Shanghai
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    placeholders:
+      embeddingDimensions: ${AI_EMBED_DIMENSIONS:1536}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: Asia/Shanghai
+  mvc:
+    throw-exception-if-no-handler-found: false
+  web:
+    resources:
+      add-mappings: false
+
+  ai:
+    openai:
+      base-url: ${AI_BASE_URL:https://api.openai.com}
+      api-key: ${AI_API_KEY:changeme}
+      chat:
+        options:
+          model: ${AI_CHAT_MODEL:gpt-4o-mini}
+          temperature: 0.2
+      embedding:
+        options:
+          model: ${AI_EMBED_MODEL:text-embedding-3-small}
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: ${AI_EMBED_DIMENSIONS:1536}
+        initialize-schema: false
+        schema-name: public
+        table-name: summary_embeddings
+        id-type: UUID
+    mcp:
+      server:
+        name: copilot-hooks-mcp
+        version: 0.1.0
+        type: SYNC
+        sse-message-endpoint: /mcp/message
+        sse-endpoint: /mcp/sse
+
+logging:
+  level:
+    root: INFO
+    com.copilot.hooks: ${LOG_LEVEL:INFO}
+
+app:
+  frontend:
+    path: ${FRONTEND_PATH:classpath:/static/}
+  admin:
+    bootstrap-username: ${ADMIN_USERNAME:admin}
+    bootstrap-password: ${ADMIN_PASSWORD:admin123}
+  ingest:
+    max-payload-bytes: 1048576
+  summary:
+    auto-on-session-end: ${SUMMARY_AUTO:true}

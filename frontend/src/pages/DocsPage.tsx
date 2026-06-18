@@ -1,0 +1,6 @@
+export function DocsPage() {
+  const origin = location.origin;
+  const command = "curl -sS -X POST -H 'Content-Type: application/json' -H 'Authorization: Bearer YOUR_TOKEN_HERE' --data-binary @- --max-time 10 " + origin + "/api/hooks/ingest >/dev/null 2>&1 || true";
+  const hooks = { hooks: { SessionStart: [{ type: 'command', command }], UserPromptSubmit: [{ type: 'command', command }], PreToolUse: [{ type: 'command', command }], PostToolUse: [{ type: 'command', command }], Notification: [{ type: 'command', command }], Stop: [{ type: 'command', command }], SubagentStop: [{ type: 'command', command }], PreCompact: [{ type: 'command', command }], SessionEnd: [{ type: 'command', command }] } };
+  return <div className="card"><div className="card-head">接入说明</div><p>1. 在个人 Token 页面创建 Token，复制 <code>chk_...</code> 明文。</p><p>2. 将以下配置写入仓库 <code>.github/hooks/</code> 或用户级 hooks 配置。</p><pre>{JSON.stringify(hooks, null, 2)}</pre><p>3. MCP SSE 地址：<code>{origin}/mcp/sse</code>，请求头加入 <code>Authorization: Bearer &lt;TOKEN&gt;</code>。</p><p>4. 管理员可在“用户管理”页面通过 Excel 批量导入用户名、显示名、邮箱、密码、角色与启用状态。</p><p>5. “调用链会话”和“内容整理”支持按月/按天筛选；管理员还可按用户筛选。</p><p>6. 左下角点击用户名可进入“个人信息”页面，修改显示名、邮箱与密码。</p><p>7. “对话工作台”支持选择已启用模型、调节 Temperature / Top P / Max Tokens，并默认使用全部 MCP 工具，也可以只勾选部分工具。</p></div>;
+}
